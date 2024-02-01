@@ -1,4 +1,4 @@
-const names: Array<string> = [];
+// const names: Array<string> = [];
 // names[0].split(" ");
 
 // const promise: Promise<string> = new Promise((resolve, reject) => {
@@ -79,3 +79,24 @@ const numberStorage = new DataStorage<number>();
 // // ...
 // objStorage.removeItem({ name: "Tami" });
 // console.log(objStorage.getItems());
+
+interface CourseGoal {
+  title: string;
+  description: string;
+  completeUntil: Date;
+}
+
+function createCourseGoal(
+  title: string,
+  description: string,
+  date: Date
+): CourseGoal {
+  let courseGoal: Partial<CourseGoal> = {};
+  courseGoal.title = title;
+  courseGoal.description = description;
+  courseGoal.completeUntil = date;
+  return courseGoal as CourseGoal;
+  // return { title: title, description: description, completeUntil: data };
+}
+
+const names: Readonly<string[]> = ["Abdullah", "Nawal"];
